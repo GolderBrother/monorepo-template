@@ -1,5 +1,11 @@
 # @golderbrother/package1
 
+## 1.0.0
+
+### Major Changes
+
+- package1 add test
+
 ## 0.0.2
 
 ### Patch Changes
