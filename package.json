@@ -4,13 +4,16 @@
   "name": "monorepo-template",
   "description": "A monorepo template project by pnpm and turbo",
   "scripts": {
-    "lint": "eslint --ext .ts ./packages --fix",
-    "test": "cd packages/package1 && pnpm i && npm run test && cd ../..",
+    "lint": "eslint --ext .ts ./packages",
+    "lint:fix": "eslint --ext .ts ./packages --fix",
+    "test": "vitest --watch=false",
+    "test2": "cd packages/package1 && pnpm i && npm run test && cd ../..",
     "lint-staged": "npm run test && lint-staged -c .lintstagedrc.js",
     "preinstall": "only-allow pnpm",
+    "prebuild": "rm -rf packages/*/dist",
     "prepare": "husky install",
     "prepublishOnly": "npm run test",
-    "commit": "pnpm changeset && pnpm run version-packages && cz",
+    "commit": "npm run lint && pnpm changeset && pnpm run version-packages && cz",
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
     "changeset": "changeset add",
@@ -51,7 +54,8 @@
     "turbo": "^1.13.4",
     "typedoc": "^0.25.12",
     "typescript": "^4.8.4",
-    "vitepress": "^1.0.1"
+    "vitepress": "^1.0.1",
+    "vitest": "^1.6.0"
   },
   "config": {
     "commitizen": {

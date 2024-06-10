@@ -39,7 +39,7 @@
   "scripts": {
     "dev": "tsup --watch",
     "lint:fix": "eslint . --fix",
-    "test": "vitest run",
+    "test": "vitest",
     "coverage": "vitest run --coverage",
     "build": "vite build",
     "start": "tsx src/index.ts",
