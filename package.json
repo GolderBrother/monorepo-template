@@ -4,7 +4,7 @@
   "name": "monorepo-template",
   "description": "A monorepo template project by pnpm and turbo",
   "scripts": {
-    "lint": "eslint --ext .ts ./packages",
+    "lint": "eslint --ext .ts ./packages --fix",
     "test": "cd packages/package1 && npm run test && cd ../..",
     "lint-staged": "npm run test && lint-staged -c .lintstagedrc.js",
     "preinstall": "only-allow pnpm",

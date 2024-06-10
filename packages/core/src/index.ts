@@ -8,10 +8,10 @@ import type { CoreResponse } from './types'
  */
 export const reverseString = (str: unknown): string => {
   if (typeof str !== 'string') {
-    throw new Error('参数必须是字符串');
+    throw new Error('参数必须是字符串')
   }
-  return str.split('').reverse().join('');
-};
+  return str.split('').reverse().join('')
+}
 
 export const coreFunction = (): CoreResponse => ({ message: 'Response from core' })
 
