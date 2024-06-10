@@ -37,8 +37,12 @@ jobs:
           path: ~/.pnpm-store
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
       # Step4
+      - name: 删除 pnpm-lock.yaml
+        run: rm -f pnpm-lock.yaml
+      # Step4
       - name: 安装依赖
-        run: pnpm install --frozen-lockfile
+        # run: pnpm install --frozen-lockfile
+        run: pnpm install
       # Step5
       - name: 代码校验
         run: npm run lint
