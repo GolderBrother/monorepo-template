@@ -1,5 +1,11 @@
 # @golderbrother/package1
 
+## 1.1.0
+
+### Minor Changes
+
+- fix eslint problem
+
 ## 1.0.0
 
 ### Major Changes
